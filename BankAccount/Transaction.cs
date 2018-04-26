@@ -11,7 +11,7 @@ namespace BankAccountKata
         public TransactionType TransactionType;
         public ITransactionStrategy TransactionStrategy;
 
-        protected Transaction(BankAccount account ,decimal amount)
+        protected Transaction(BankAccount account, decimal amount)
         {
             Account = account;
             Amount = amount;
@@ -28,38 +28,18 @@ namespace BankAccountKata
         {
             StringBuilder operationInformation = new StringBuilder();
 
-            operationInformation.AppendLine(string.Format("Operation: {0}", TransactionType.ToString()));
-            operationInformation.AppendLine(string.Format("Date: {0}", Date.ToString("d")));
-            operationInformation.AppendLine(string.Format("Amount: {0}", Amount));
-            operationInformation.AppendLine(string.Format("Account Balance: {0}", Account.Balance));
+            operationInformation.AppendLine(string.Format(string.Format(@"Operation: {0}
+Date: {1}
+Amount: {2}
+Account Balance: {3}"
+                , TransactionType.ToString(), Date.ToString("d"), Amount, Account.Balance)));
 
             return operationInformation.ToString();
-        }
-    }
 
-    public class DepositTransaction : Transaction
-    {
-        public DepositTransaction(BankAccount account, decimal amount)
-            : base(account, amount)
-        {
-            TransactionType = TransactionType.Deposit;
-            TransactionStrategy = new DepositStrategy();
-        }
-    }
 
-    public class WithdrawalTransaction : Transaction
-    {
-        public WithdrawalTransaction(BankAccount account, decimal amount)
-            : base(account, amount)
-        {
-            TransactionType = TransactionType.Withdrawal;
-            TransactionStrategy = new WithdrawalStrategy();
-        }
-    }
+            
 
-    public enum TransactionType
-    {
-        Deposit,
-        Withdrawal
+
+        }
     }
 }

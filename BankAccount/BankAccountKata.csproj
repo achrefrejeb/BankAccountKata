@@ -40,9 +40,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BankAccount.cs" />
+    <Compile Include="DepositStrategy.cs" />
+    <Compile Include="DepositTransaction.cs" />
     <Compile Include="ITransactionStrategy.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionType.cs" />
+    <Compile Include="WithdrawalStrategy.cs" />
+    <Compile Include="WithdrawalTransaction.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
