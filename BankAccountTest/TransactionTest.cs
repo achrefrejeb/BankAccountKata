@@ -12,10 +12,14 @@ namespace BankAccountTest
         [TestCase(100, 100, ExpectedResult = 200)]
         [TestCase(0, 200, ExpectedResult = 200)]
         [TestCase(200, 100, ExpectedResult = 300)]
+        [TestCase(120, 100, ExpectedResult = 220)]
         public decimal ShouldReturnGreaterSumWhenMakeDeposit(decimal balance, decimal amount)
         {
+            //Arrange
             BankAccount account = new BankAccount(balance);
+            //Act
             new DepositTransaction(account, amount).DoOperation();
+            //Assert
             return account.Balance;
         }
 

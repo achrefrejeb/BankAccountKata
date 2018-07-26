@@ -42,6 +42,7 @@
     <Compile Include="BankAccount.cs" />
     <Compile Include="DepositStrategy.cs" />
     <Compile Include="DepositTransaction.cs" />
+    <Compile Include="FormatHelper.cs" />
     <Compile Include="ITransactionStrategy.cs" />
     <Compile Include="Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
