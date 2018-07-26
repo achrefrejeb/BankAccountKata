@@ -8,7 +8,7 @@ namespace BankAccountKata
 {
     public static class FormatHelper
     {
-        public static string GetFormattedTransactionsHistory(BankAccount bankAccount)
+        public static string GetFormattedTransactionsHistory(this BankAccount bankAccount)
         {
             var transactionsHistory = new StringBuilder("Account History\n---------------------------\n");
             foreach (var operation in bankAccount.Operations)

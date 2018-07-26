@@ -26,7 +26,7 @@ namespace BankAccountTest
             BankAccount account = new BankAccount(0);
             new DepositTransaction(account, amount).DoOperation();
             new WithdrawalTransaction(account, amount).DoOperation();
-            var list = FormatHelper.GetFormattedTransactionsHistory(account);
+            var list = account.GetFormattedTransactionsHistory();
             Check.That(list).Equals(string.Format("Account History\n---------------------------\nOperation: Deposit\r\nDate: {0}\r\nAmount: 100\r\nAccount Balance: 0\r\n---------------------------\r\nOperation: Withdrawal\r\nDate: {0}\r\nAmount: 100\r\nAccount Balance: 0\r\n---------------------------\r\n", DateTime.Now.Date.ToString("d")));
         }
     }
